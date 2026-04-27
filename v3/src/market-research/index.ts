@@ -18,6 +18,8 @@ export type {
 } from './domain/types';
 export type { MarketDataProvider } from './application/ports';
 export { InMemoryMarketDataProvider } from './infrastructure/InMemoryMarketDataProvider';
+export { CsvFileMarketDataProvider, type CsvFileMarketDataProviderOptions } from './infrastructure/CsvFileMarketDataProvider';
+export { parseCandleCsvText } from './infrastructure/parseCandleCsv';
 export { runMarketResearch, type RunMarketResearchInput, type RunMarketResearchResult } from './application/MarketResearchPipeline';
 export { renderMarketResearchRunMd } from './application/renderRunMarkdown';
 export type { RunRecordStore } from './application/run-record-ports';
