@@ -23,7 +23,14 @@ export { parseCandleCsvText } from './infrastructure/parseCandleCsv';
 export { runMarketResearch, type RunMarketResearchInput, type RunMarketResearchResult } from './application/MarketResearchPipeline';
 export { renderMarketResearchRunMd } from './application/renderRunMarkdown';
 export type { RunRecordStore } from './application/run-record-ports';
+export type { KeyValueStore } from './application/kv-ports';
+export { InMemoryKeyValueStore } from './application/kv-ports';
+export { JsonKeyValueRunRecordStore, type JsonKeyValueRunRecordStoreOptions } from './infrastructure/JsonKeyValueRunRecordStore';
 export { InMemoryRunRecordStore } from './infrastructure/InMemoryRunRecordStore';
+export { CallbackResearchNarration } from './application/CallbackResearchNarration';
+export type { LlmTextClient, LlmTextRequest, LlmTextResult, ChatRole } from './infrastructure/llm-complete-port';
+export { LlmTextResearchNarration, type LlmTextResearchNarrationOptions } from './infrastructure/LlmTextResearchNarration';
+export { createLlmTextClientFromIllmProvider } from './infrastructure/illmTextClientAdapter';
 export { buildOpportunityReportFromCandles, type BuildReportContext } from './application/buildOpportunityReport';
 export {
   NoOpResearchNarration,
