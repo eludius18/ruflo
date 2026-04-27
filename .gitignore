@@ -55,6 +55,8 @@
 .Python
 .agentic-flow/
 .cache/
+.pnpm-cache/
+.tmp-cache/
 .claude-flow/
 .claude/settings.local.json
 .deno/

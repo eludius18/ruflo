@@ -38,9 +38,11 @@
     "bun:test": "bun test",
     "bun:dev": "bun run --watch src/index.ts",
     "bun:publish:dry": "cd claude-flow && bun publish --dry-run --tag v3alpha",
-    "bun:publish:v3alpha": "cd claude-flow && bun publish --tag v3alpha"
+    "bun:publish:v3alpha": "cd claude-flow && bun publish --tag v3alpha",
+    "market-research:scan": "tsx scripts/market-research-scan.ts"
   },
   "devDependencies": {
+    "tsx": "^4.19.0",
     "@types/node": "^20.0.0",
     "@vitest/coverage-v8": "^4.0.16",
     "typescript": "^5.9.3",

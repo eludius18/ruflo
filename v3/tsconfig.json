@@ -13,7 +13,8 @@
       "@claude-flow/testing": ["./@claude-flow/testing/src"],
       "@claude-flow/deployment": ["./@claude-flow/deployment/src"],
       "@claude-flow/shared": ["./@claude-flow/shared/src"],
-      "@claude-flow/hooks": ["./@claude-flow/hooks/src"]
+      "@claude-flow/hooks": ["./@claude-flow/hooks/src"],
+      "@claude-flow/providers": ["./@claude-flow/providers/src"]
     }
   },
   "references": [

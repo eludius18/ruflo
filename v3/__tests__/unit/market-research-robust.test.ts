@@ -35,10 +35,16 @@ describe('InMemoryMarketDataProvider', () => {
   });
 
   it('same symbol+limit yields the same series (deterministic across calls)', async () => {
-    const p = new InMemoryMarketDataProvider();
-    const a = await p.getRecentCandles('DETERM', 5);
-    const b = await p.getRecentCandles('DETERM', 5);
-    expect(a).toEqual(b);
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-06-01T12:00:00.000Z'));
+    try {
+      const p = new InMemoryMarketDataProvider();
+      const a = await p.getRecentCandles('DETERM', 5);
+      const b = await p.getRecentCandles('DETERM', 5);
+      expect(a).toEqual(b);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });
 

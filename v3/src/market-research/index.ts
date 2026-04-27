@@ -26,6 +26,8 @@ export type { RunRecordStore } from './application/run-record-ports';
 export type { KeyValueStore } from './application/kv-ports';
 export { InMemoryKeyValueStore } from './application/kv-ports';
 export { JsonKeyValueRunRecordStore, type JsonKeyValueRunRecordStoreOptions } from './infrastructure/JsonKeyValueRunRecordStore';
+export { FileKeyValueStore, keyToSafeSegments } from './infrastructure/FileKeyValueStore';
+export { MemoryKeyValueStore } from './infrastructure/MemoryKeyValueStore';
 export { InMemoryRunRecordStore } from './infrastructure/InMemoryRunRecordStore';
 export { CallbackResearchNarration } from './application/CallbackResearchNarration';
 export type { LlmTextClient, LlmTextRequest, LlmTextResult, ChatRole } from './infrastructure/llm-complete-port';
