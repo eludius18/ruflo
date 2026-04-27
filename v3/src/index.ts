@@ -33,9 +33,17 @@ export { ConfigTools } from './infrastructure/mcp/tools/ConfigTools';
 
 // Market research (trading) — research-only, no order execution
 export {
+  buildOpportunityReportFromCandles,
   createSignalRunId,
+  InMemoryMarketDataProvider,
   isSignalRunIdString,
+  runMarketResearch,
   startMarketResearchPlaceholder,
+  type MarketDataProvider,
+  type Candle,
+  type PriceSnapshot,
+  type RunMarketResearchInput,
+  type RunMarketResearchResult,
   type SignalRunId,
   type MarketInstrument,
   type MarketResearchRunMeta,

@@ -3,6 +3,7 @@
  */
 
 export { createSignalRunId, isSignalRunIdString, type SignalRunId } from './domain/signal-run';
+export type { Candle, PriceSnapshot } from './domain/market-data';
 export type {
   AuditVerdict,
   ISODateString,
@@ -10,4 +11,8 @@ export type {
   MarketResearchRunMeta,
   OpportunityReport,
 } from './domain/types';
+export type { MarketDataProvider } from './application/ports';
+export { InMemoryMarketDataProvider } from './infrastructure/InMemoryMarketDataProvider';
+export { runMarketResearch, type RunMarketResearchInput, type RunMarketResearchResult } from './application/MarketResearchPipeline';
+export { buildOpportunityReportFromCandles } from './application/buildOpportunityReport';
 export { startMarketResearchPlaceholder } from './application/placeholder';
