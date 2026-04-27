@@ -30,3 +30,14 @@ export { MCPServer } from './infrastructure/mcp/MCPServer';
 export { AgentTools } from './infrastructure/mcp/tools/AgentTools';
 export { MemoryTools } from './infrastructure/mcp/tools/MemoryTools';
 export { ConfigTools } from './infrastructure/mcp/tools/ConfigTools';
+
+// Market research (trading) — research-only, no order execution
+export {
+  createSignalRunId,
+  isSignalRunIdString,
+  startMarketResearchPlaceholder,
+  type SignalRunId,
+  type MarketInstrument,
+  type MarketResearchRunMeta,
+  type OpportunityReport,
+} from './market-research';
