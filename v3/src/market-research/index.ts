@@ -19,6 +19,9 @@ export type {
 export type { MarketDataProvider } from './application/ports';
 export { InMemoryMarketDataProvider } from './infrastructure/InMemoryMarketDataProvider';
 export { runMarketResearch, type RunMarketResearchInput, type RunMarketResearchResult } from './application/MarketResearchPipeline';
+export { renderMarketResearchRunMd } from './application/renderRunMarkdown';
+export type { RunRecordStore } from './application/run-record-ports';
+export { InMemoryRunRecordStore } from './infrastructure/InMemoryRunRecordStore';
 export { buildOpportunityReportFromCandles, type BuildReportContext } from './application/buildOpportunityReport';
 export {
   NoOpResearchNarration,
