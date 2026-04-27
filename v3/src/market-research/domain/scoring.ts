@@ -48,9 +48,12 @@ export function scoreFromCandles(
       ],
     };
   }
-  const first = candles[0]!.close;
-  const last = candles[candles.length - 1]!.close;
-  const ret = first !== 0 ? (last - first) / Math.abs(first) : 0;
+  const first = Number(candles[0]!.close);
+  const last = Number(candles[candles.length - 1]!.close);
+  let ret = first !== 0 && Number.isFinite(first) ? (last - first) / Math.abs(first) : 0;
+  if (!Number.isFinite(ret)) {
+    ret = 0;
+  }
   const highs = candles.map((c) => c.high);
   const lows = candles.map((c) => c.low);
   const maxH = Math.max(...highs);
