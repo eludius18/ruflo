@@ -3,7 +3,10 @@
  * Extend as the pipeline (TA, risk, report) is implemented.
  */
 
+import type { DataQuality } from './data-quality';
+import type { OpportunityScore } from './scoring';
 import type { SignalRunId } from './signal-run';
+import type { SignalAudit } from './audit';
 
 export type ISODateString = string;
 
@@ -41,4 +44,26 @@ export interface OpportunityReport {
   evidenceRefs: string[];
   riskNotes: string[];
   disclaimer: string;
+}
+
+/**
+ * End-to-end artefact for one instrument in a run.
+ */
+export interface InstrumentResearchBundle {
+  instrument: MarketInstrument;
+  dataQuality: DataQuality;
+  score: OpportunityScore;
+  audit: SignalAudit;
+  report: OpportunityReport;
+}
+
+/**
+ * Per-run ranking: best (rank 1) = highest `score` value in this result set.
+ */
+export interface RankedOpportunity {
+  symbol: string;
+  /** 1 = best in this run */
+  rank: number;
+  /** Same scale as `OpportunityScore.value` (0–100) */
+  score: number;
 }

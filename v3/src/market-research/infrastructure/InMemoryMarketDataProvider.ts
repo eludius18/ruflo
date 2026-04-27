@@ -10,10 +10,12 @@ export class InMemoryMarketDataProvider implements MarketDataProvider {
     const n = Math.max(0, Math.min(100, Math.floor(limit)));
     if (n === 0) return [];
     const base = this.hashToUnit(symbol);
-    const t0 = Date.parse('2026-01-01T00:00:00.000Z');
+    const oneDay = 86_400_000;
+    const end = Date.now();
+    const t0 = end - (n - 1) * oneDay;
     const out: Candle[] = [];
     for (let i = 0; i < n; i++) {
-      const t = new Date(t0 + i * 86_400_000).toISOString();
+      const t = new Date(t0 + i * oneDay).toISOString();
       const o = 100 + base * 0.1 + i * 0.05;
       const c = o + 0.2 * Math.sin(i + base);
       out.push({
